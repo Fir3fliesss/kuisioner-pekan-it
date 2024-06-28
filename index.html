@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuisioner IT Week</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="container mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Kuisioner Pekan IT</h1>
+        <form id="kuisionerForm" class="bg-white p-4 rounded shadow-md">
+            <div class="mb-4">
+                <label for="namaWali" class="block text-sm font-medium text-gray-700">Nama Wali Siswa</label>
+                <input type="text" id="namaWali" name="namaWali" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="namaSiswa" class="block text-sm font-medium text-gray-700">Nama Siswa</label>
+                <input type="text" id="namaSiswa" name="namaSiswa" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="kelas" class="block text-sm font-medium text-gray-700">Kelas</label>
+                <select id="kelas" name="kelas" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                    <option value="X RPL 1">X RPL 1</option>
+                    <option value="X RPL 2">X RPL 2</option>
+                    <option value="X RPL 3">X RPL 3</option>
+                    <option value="XI RPL 1">XI RPL 1</option>
+                    <option value="XI RPL 2">XI RPL 2</option>
+                    <option value="XI RPL 3">XI RPL 3</option>
+                    <option value="X TKJ 1">X TKJ 1</option>
+                    <option value="X TKJ 2">X TKJ 2</option>
+                    <option value="XI TKJ 1">XI TKJ 1</option>
+                    <option value="XI TKJ 2">XI TKJ 2</option>
+                    <option value="X MM 1">X MM 1</option>
+                    <option value="X MM 2">X MM 2</option>
+                    <option value="X MM 3">X MM 3</option>
+                    <option value="XI MM 1">XI MM 1</option>
+                    <option value="XI MM 2">XI MM 2</option>
+                    <option value="XI MM 3">XI MM 3</option>
+                    <option value="XI MM 4">XI MM 4</option>
+                    <option value="X PKM 1">X PKM 1</option>
+                    <option value="X PKM 2">X PKM 2</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="tanggapan" class="block text-sm font-medium text-gray-700">Tanggapan terhadap Acara</label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Tampilan Produk</label>
+                        <div class="mt-2 flex items-center space-x-2">
+                            <label><input type="radio" name="tampilanProduk" value="Baik" class="mr-1"> Baik</label>
+                            <label><input type="radio" name="tampilanProduk" value="Cukup" class="mr-1"> Cukup</label>
+                            <label><input type="radio" name="tampilanProduk" value="Kurang" class="mr-1"> Kurang</label>
+                            <label><input type="radio" name="tampilanProduk" value="Buruk" class="mr-1"> Buruk</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Tampilan Stand</label>
+                        <div class="mt-2 flex items-center space-x-2">
+                            <label><input type="radio" name="tampilanStand" value="Baik" class="mr-1"> Baik</label>
+                            <label><input type="radio" name="tampilanStand" value="Cukup" class="mr-1"> Cukup</label>
+                            <label><input type="radio" name="tampilanStand" value="Kurang" class="mr-1"> Kurang</label>
+                            <label><input type="radio" name="tampilanStand" value="Buruk" class="mr-1"> Buruk</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Penjelasan Produk</label>
+                        <div class="mt-2 flex items-center space-x-2">
+                            <label><input type="radio" name="penjelasanProduk" value="Baik" class="mr-1"> Baik</label>
+                            <label><input type="radio" name="penjelasanProduk" value="Cukup" class="mr-1"> Cukup</label>
+                            <label><input type="radio" name="penjelasanProduk" value="Kurang" class="mr-1"> Kurang</label>
+                            <label><input type="radio" name="penjelasanProduk" value="Buruk" class="mr-1"> Buruk</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Hiburan</label>
+                        <div class="mt-2 flex items-center space-x-2">
+                            <label><input type="radio" name="hiburan" value="Baik" class="mr-1"> Baik</label>
+                            <label><input type="radio" name="hiburan" value="Cukup" class="mr-1"> Cukup</label>
+                            <label><input type="radio" name="hiburan" value="Kurang" class="mr-1"> Kurang</label>
+                            <label><input type="radio" name="hiburan" value="Buruk" class="mr-1"> Buruk</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="saran" class="block text-sm font-medium text-gray-700">Saran - Saran</label>
+                <textarea id="saran" name="saran" rows="4" class="mt-1 p-2 block w-full border border-gray-300 rounded-md"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Kirim</button>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

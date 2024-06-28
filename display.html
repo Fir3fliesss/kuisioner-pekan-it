@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Kuisioner IT Week</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="container mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Data Kuisioner IT Week</h1>
+        <div class="bg-white p-4 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">Data Kuisioner</h2>
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Wali</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Siswa</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kelas</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tampilan Produk</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tampilan Stand</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Penjelasan Produk</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Hiburan</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Saran</th>
+                    </tr>
+                </thead>
+                <tbody id="dataKuisioner" class="bg-white divide-y divide-gray-200">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        // Fetch data from API
+        fetch('https://api-pekanit.la-siesta.my.id/api/v1/get/data-kuisioner')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('dataKuisioner');
+                data.forEach(item => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.namaWali}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.namaSiswa}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.kelas}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.tampilanProduk}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.tampilanStand}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.penjelasanProduk}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.hiburan}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.saran}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
